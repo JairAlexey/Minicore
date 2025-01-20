@@ -1,12 +1,19 @@
 // backend/db/index.js
 const { Pool } = require('pg');
+const {
+    PG_USER,
+    PG_HOST,
+    PG_DATABASE,
+    PG_PASSWORD,
+    PG_PORT
+} = require('../config');
 
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'minicore_db',
-    password: 'admin123',
-    port: 5433,
+    user: PG_USER,
+    host: PG_HOST,
+    database: PG_DATABASE,
+    password: PG_PASSWORD,
+    port: PG_PORT
 });
 
 const testConnection = async () => {
